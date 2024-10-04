@@ -3,15 +3,22 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Add custom dark mode styles */
-.dark .navbar {
-  background-color: #1a202c; /* Darker background for dark mode */
+.bgTransition {
+  transition: background-color 1s;
 }
 
-.dark .text-gray-300 {
-  color: #a0aec0; /* Lighter text color for dark mode */
+.cell::after {
+  content: "";
 }
-
-.dark .hover\:text-white:hover {
-  color: #f7fafc; /* White text on hover for dark mode */
+.darkTheme {
+  background-color: #1a202c;
+  color: #ffffff;
+}
+.darkThemeNav {
+  background-color: #0e1118;
+  color: #ffffff;
+}
+.lightThemeNav {
+  background-color: #efefef;
+  color: #000000;
 }

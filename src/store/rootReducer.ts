@@ -1,7 +1,6 @@
 import { combineSlices } from "@reduxjs/toolkit";
-import { klinesSlice } from "./reducers/klinesSlice";
 import { themeSlice } from './reducers/themeSlice';
 
 
-const rootReducer = combineSlices(klinesSlice, themeSlice);
+const rootReducer = combineSlices( themeSlice);
 export default rootReducer;
