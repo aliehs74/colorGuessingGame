@@ -22,3 +22,7 @@ export interface LightweightChartsProps {
     wickDownColor: string
   }
 }
+export type AlertType = "success" | "warning" | "info" | "error"
+export function isAlertType(type: string): type is AlertType {
+  return ["success", "warning", "info", "error"].includes(type);
+}

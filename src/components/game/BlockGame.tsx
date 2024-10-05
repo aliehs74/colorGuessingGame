@@ -2,6 +2,7 @@ import { Alert, Col } from "antd";
 import { useAppSelector } from "../../store/hooks";
 import { useState } from "react";
 import { CellRenderer } from "./CellRenderer";
+import { AlertType, isAlertType } from "../../utils/Types/allTypes";
 
 const BlockGame = () => {
   const { theme } = useAppSelector((state) => state.theme);
@@ -52,7 +53,7 @@ const BlockGame = () => {
           show: true,
           message:
             "تبریک! شما بازی را به پایان رساندید. لطفا مجددا امتحان کنید.",
-          type: "success",
+          type: "success" as AlertType,
         });
       }
     } else {
@@ -60,7 +61,7 @@ const BlockGame = () => {
         show: true,
         message:
           "متاسفانه سلول اشتباهی را انتخاب کردید. لطفا مجددا امتحان کنید.",
-        type: "warning",
+        type: "warning" as AlertType,
       });
     }
   }
@@ -77,7 +78,7 @@ const BlockGame = () => {
         <Alert
           className="absolute top-5 right-5 z-10 h-20 lg:text-base"
           message={alertOption.message}
-          type={alertOption.type}
+          type={isAlertType(alertOption.type) ? alertOption.type : "success"}
           showIcon
           closable
         />
